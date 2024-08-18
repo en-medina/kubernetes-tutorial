@@ -1,0 +1,8 @@
+# Parámetros de Configuración de Odoo
+odooEmail: "admin@midominio.local" # Correo electrónico personalizado para el administrador de Odoo
+odooPassword: "miclavesegura" # Contraseña robusta para el administrador de Odoo
+loadDemoData: true # Cargar datos de demostración durante la inicialización
+smtpHost: "smtp.midominio.local" # Servidor SMTP personalizado
+smtpPort: "587" # Puerto del servidor SMTP
+smtpUser: "smtpuser" # Nombre de usuario SMTP
+smtpPassword: "smtpclave" # Contraseña SMTP

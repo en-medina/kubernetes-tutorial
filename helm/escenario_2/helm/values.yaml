@@ -1,0 +1,17 @@
+# Default values for escenario_2.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ghcr.io/en-medina/go-mongo-http-basic
+  tag: 0.1.0
+  pullPolicy: Always
+
+mongodb:
+  auth:
+    enabled: true
+    username: myuser
+    password: mypassword
+    database: mydb
