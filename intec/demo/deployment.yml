@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blackfriday-ofertas
+  labels:
+    departamento: mercadeo
+    app: blackfriday-ofertas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      departamento: mercadeo
+      app: blackfriday-ofertas
+  template:
+    metadata:
+      labels:
+        departamento: mercadeo
+        app: blackfriday-ofertas
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:latest
+          volumeMounts:
+            - name: landing-volume
+              mountPath: /usr/share/nginx/html/index.html
+              subPath: index.html
+      volumes:
+        - name: landing-volume
+          configMap:
+            name: blackfriday-landing
