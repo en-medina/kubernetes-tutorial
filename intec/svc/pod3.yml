@@ -1,0 +1,32 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: intec-nginx
+  labels:
+    universidad: intec
+    edificio: gc
+    componente: app
+spec:
+  containers:
+    - name: c1
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: http
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: intec-apache
+  labels:
+    universidad: intec
+    edificio: gc
+    componente: app
+spec:
+  containers:
+    - name: c1
+      image: httpd
+      ports:
+        - containerPort: 80
+          name: http

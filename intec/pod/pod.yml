@@ -1,0 +1,20 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mybox
+  labels:
+    universidad: intec
+    edificio: gc
+spec:
+  containers:
+    - name: c1
+      image: busybox
+      command:
+        - /bin/sh
+      args:
+        - -c
+        - "while true; do echo $SALUDO; sleep 5; done;"
+      env:
+        - name: SALUDO
+          value: Intec en k8s 101

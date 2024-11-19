@@ -1,0 +1,254 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: blackfriday-landing
+  namespace: default
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="es">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Black Friday 2024 - Ofertas Exclusivas</title>
+        <style>
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+              sans-serif;
+          }
+
+          body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+          }
+
+          .hero {
+            background: #000;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+          }
+
+          .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+              135deg,
+              rgba(255, 200, 0, 0.1) 0%,
+              rgba(0, 0, 0, 0.9) 100%
+            );
+            z-index: 1;
+          }
+
+          .hero-content {
+            position: relative;
+            z-index: 2;
+          }
+
+          .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
+
+          .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+          }
+
+          .highlight {
+            color: #ffd700;
+            font-weight: bold;
+          }
+
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+          }
+
+          .deals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+          }
+
+          .deal-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+          }
+
+          .deal-card:hover {
+            transform: translateY(-5px);
+          }
+
+          .deal-card h3 {
+            color: #000;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+          }
+
+          .price {
+            font-size: 2rem;
+            margin: 1rem 0;
+          }
+
+          .original-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 1.25rem;
+          }
+
+          .cta-button {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+
+          .cta-button:hover {
+            background: #333;
+            transform: scale(1.05);
+          }
+
+          .countdown {
+            background: #000;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 12px;
+          }
+
+          .countdown h2 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+          }
+
+          .ribbon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: #ffd700;
+            color: black;
+            padding: 0.5rem 2rem;
+            transform: rotate(45deg) translateX(30%) translateY(-10%);
+            font-weight: bold;
+          }
+
+          @media (max-width: 768px) {
+            .hero h1 {
+              font-size: 2.5rem;
+            }
+
+            .hero p {
+              font-size: 1.2rem;
+            }
+
+            .deal-card {
+              margin-bottom: 1rem;
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <section class="hero">
+          <div class="hero-content">
+            <h1>Black Friday 2024</h1>
+            <p>¡Los mejores descuentos del año!</p>
+            <p class="highlight">Hasta 70% de descuento</p>
+            <a href="#offers" class="cta-button">Ver Ofertas Especiales</a>
+          </div>
+        </section>
+
+        <div class="container">
+          <div class="deals">
+            <div class="deal-card">
+              <h3>Plan Básico</h3>
+              <p>Perfecto para comenzar</p>
+              <div class="price">
+                <span class="original-price">$99/mes</span>
+                <br />
+                <span class="highlight">$29/mes</span>
+              </div>
+              <p>70% de descuento</p>
+              <ul style="list-style: none; margin: 1rem 0">
+                <li>✓ Todas las funciones básicas</li>
+                <li>✓ Soporte por email</li>
+                <li>✓ 5 proyectos</li>
+              </ul>
+              <a href="#comprar" class="cta-button">Comprar Ahora</a>
+            </div>
+
+            <div class="deal-card">
+              <div class="ribbon">MEJOR OFERTA</div>
+              <h3>Plan Premium</h3>
+              <p>Nuestro plan más popular</p>
+              <div class="price">
+                <span class="original-price">$199/mes</span>
+                <br />
+                <span class="highlight">$69/mes</span>
+              </div>
+              <p>65% de descuento</p>
+              <ul style="list-style: none; margin: 1rem 0">
+                <li>✓ Todas las funciones premium</li>
+                <li>✓ Soporte prioritario 24/7</li>
+                <li>✓ Proyectos ilimitados</li>
+              </ul>
+              <a href="#comprar" class="cta-button">Comprar Ahora</a>
+            </div>
+
+            <div class="deal-card">
+              <h3>Plan Empresarial</h3>
+              <p>Para grandes equipos</p>
+              <div class="price">
+                <span class="original-price">$299/mes</span>
+                <br />
+                <span class="highlight">$119/mes</span>
+              </div>
+              <p>60% de descuento</p>
+              <ul style="list-style: none; margin: 1rem 0">
+                <li>✓ Todas las funciones enterprise</li>
+                <li>✓ Gerente de cuenta dedicado</li>
+                <li>✓ Personalización completa</li>
+              </ul>
+              <a href="#comprar" class="cta-button">Comprar Ahora</a>
+            </div>
+          </div>
+
+          <div class="countdown">
+            <h2>¡Oferta por tiempo limitado!</h2>
+            <p>Estas ofertas especiales de Black Friday terminan pronto</p>
+            <p style="font-size: 1.25rem; margin: 1rem 0">
+              ¡No pierdas la oportunidad de ahorrar hasta un
+              <span class="highlight">70%</span>!
+            </p>
+            <a href="#offer" class="cta-button">Aprovecha Ahora</a>
+          </div>
+        </div>
+      </body>
+    </html>
